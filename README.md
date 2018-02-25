@@ -3,6 +3,14 @@
 This project meant to be an example for companies that trying to create AEM
 infrastructure in DevOps manner.
 
+## Requirements
+
+This *can* be in smaller minor versions, although it was tested in this way.
+
+* Docker (>= 17.12.ce) 
+* Maven (>= 3.3.9)
+* AEM jar (>= 6.1) + **license.properties** file
+
 ## How to run infrastructure
 
 Unfortunately, there is no AEM jar provided because of licensing and size of
@@ -18,6 +26,7 @@ To run any AEM you need to put three elements into:
 
 After putting thse files, just type:
 
+     ./update-conf-package
      docker-compose up
 
 ## Entry points
