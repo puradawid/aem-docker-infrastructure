@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "Starting docker proxy"
-add-host dispatcher geometrixxseliing.com
+add-host dispatcher geometrixxselling.com
 httpd-foreground
