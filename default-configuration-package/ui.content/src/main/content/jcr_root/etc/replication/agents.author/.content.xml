@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:mixinTypes="[rep:AccessControllable]"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/libs/cq/replication/templates/agents"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Agents on author"
+        sling:resourceType="cq/replication/components/agents"/>
+    <publish/>
+    <flush/>
+    <publish_reverse/>
+    <static/>
+    <test_and_target/>
+    <rep:policy/>
+    <youtube/>
+    <dynamic_media_replication/>
+    <s7delivery/>
+    <offloading_outbox/>
+</jcr:root>

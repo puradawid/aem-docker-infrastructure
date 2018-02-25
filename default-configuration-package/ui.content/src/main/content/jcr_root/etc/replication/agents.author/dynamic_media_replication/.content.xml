@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2014-09-11T13:19:24.266-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/replication/templates/agent"
+        jcr:description="Deprecated, please use Dynamic Media Hybrid Image Replication (s7delivery) instead."
+        jcr:lastModified="{Date}2014-09-11T13:19:24.257-07:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="(Deprecated) Dynamic Media Agent (publish)"
+        sling:resourceType="cq/replication/components/agent"
+        enabled="false"
+        logLevel="info"
+        retryDelay="60000"
+        serializationType="durbo"
+        transportPassword=""
+        transportUri="http://host:port/bin/receive?sling:authRequestLogin=1"
+        transportUser="replication-receiver"
+        userId="dynamic-media-replication">
+        <damRenditionFilters
+            jcr:mixinTypes="[rep:AccessControllable]"
+            jcr:primaryType="nt:unstructured">
+            <filter-images
+                jcr:primaryType="nt:unstructured"
+                mimeType="image/.+"
+                renditionFilters="[-*,+cqdam.*]"/>
+            <filter-video
+                jcr:primaryType="nt:unstructured"
+                mimeType="video/.+"
+                renditionFilters="[-*,+cqdam.*,+cqdam.video.dm.*]"/>
+            <filter-sets
+                jcr:primaryType="nt:unstructured"
+                mimeType=".*application/.+?Set"
+                renditionFilters="[-*,+cqdam.*]"/>
+            <rep:policy/>
+        </damRenditionFilters>
+    </jcr:content>
+</jcr:root>

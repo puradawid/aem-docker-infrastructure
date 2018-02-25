@@ -1,0 +1,3 @@
+#!/bin/bash
+
+jstatd -J-Djava.security.policy=jstatd.all.policy -p 2000

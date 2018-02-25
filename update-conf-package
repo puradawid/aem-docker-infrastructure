@@ -1,0 +1,11 @@
+#/bin/bash
+
+echo Building package
+
+cd default-configuration-package && mvn clean package && cd ..
+
+echo Copying into installed-packages
+
+cp default-configuration-package/ui.content/target/*.zip aem/install_packages/configuration.zip
+
+echo Done

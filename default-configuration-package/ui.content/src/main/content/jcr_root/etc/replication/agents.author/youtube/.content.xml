@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:rep="internal"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-11-02T15:17:27.110-07:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/replication/templates/youtube"
+        jcr:description="Replication agent for YouTube. Authentication settings are managed under cloud services."
+        jcr:lastModified="{Date}2016-11-02T15:17:27.107-07:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="YouTube Publish"
+        sling:resourceType="cq/replication/components/youtube"
+        enabled="false"
+        logLevel="info"
+        protocolHTTPExpired="true"
+        serializationType="flush"
+        ssl="relaxed"
+        transportUri="youtube:///">
+        <damRenditionFilters
+            jcr:mixinTypes="[rep:AccessControllable]"
+            jcr:primaryType="nt:unstructured">
+            <filter-video
+                jcr:primaryType="nt:unstructured"
+                mimeType="video/.+"
+                renditionFilters="[-*,+cqdam.*,+cqdam.video.dm.*]"/>
+            <rep:policy/>
+        </damRenditionFilters>
+    </jcr:content>
+</jcr:root>

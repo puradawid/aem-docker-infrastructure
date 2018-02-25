@@ -1,0 +1,47 @@
+version: '3'
+services:
+  author:
+    build:
+      context: ./aem
+      args:
+        AEM_RUNMODE: 'author'
+    ports:
+      - '4502:80'
+      - '45020:10000'
+      - '45029:2000'
+    networks:
+      internal_aem:
+        aliases:
+          - author
+  publish:
+    build:
+      context: ./aem
+      args:
+        AEM_RUNMODE: 'publish'
+    ports:
+      - '4503:80'
+      - '45030:10000'
+      - '45039:2000'
+    networks:
+      internal_aem:
+        aliases:
+          - publish
+  dispatcher:
+    build: ./dispatcher
+    ports:
+      - '8080:80'
+    networks:
+      internal_aem:
+        aliases:
+          - dispatcher
+  proxy:
+    build: ./proxy
+    ports:
+      - '8888:80'
+    networks:
+      internal_aem:
+        aliases:
+          - proxy
+
+networks:
+  internal_aem:

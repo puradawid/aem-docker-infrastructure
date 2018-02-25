@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2014-07-14T17:36:55.667+02:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/replication/templates/s7delivery"
+        jcr:description="Agent to support Dynamic Media Hybrid Publish Replication."
+        jcr:lastModified="{Date}2014-07-14T17:36:55.656+02:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Dynamic Media Hybrid Image Replication"
+        sling:resourceType="cq/replication/components/s7delivery"
+        companyName=""
+        enabled="{Boolean}false"
+        enableOauth="{Boolean}true"
+        serializationType="s7delivery"
+        transportUri="{URI}s7delivery:https://replicate-na.assetsadobe.com:443/is-publish"
+        transportUser="replication-receiver"
+        triggerReceive="{Boolean}false"
+        userId="dynamic-media-replication"/>
+</jcr:root>

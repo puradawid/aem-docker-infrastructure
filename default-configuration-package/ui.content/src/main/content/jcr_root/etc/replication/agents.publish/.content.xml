@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:childrenOrder="flush,"
+        cq:name="agents.publish"
+        cq:parentPath="/etc/replication"
+        cq:siblingOrder="agents.author,treeactivation,agents.publish,"
+        cq:template="/libs/cq/replication/templates/agents"
+        jcr:isCheckedOut="{Boolean}true"
+        jcr:mixinTypes="[cq:ReplicationStatus,mix:versionable]"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Agents on publish"
+        sling:resourceType="cq/replication/components/agents"/>
+    <flush/>
+    <outbox/>
+    <resource-only-flush/>
+</jcr:root>
