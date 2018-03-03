@@ -20,9 +20,6 @@ COPY ./scripts/run.sh /aem/crx-quickstart/bin/run.sh
 RUN echo "CQ_RUNMODE=\"${AEM_RUNMODE}\"" > config
 
 WORKDIR /aem/crx-quickstart
-COPY jstatd.all.policy /aem/crx-quickstart/jstatd.all.policy
-COPY jstatd_run /aem/crx-quickstart/jstatd_run
-RUN chmod +x /aem/crx-quickstart/jstatd_run
 
 EXPOSE 80 10000 2000
 ENTRYPOINT ["/aem/crx-quickstart/bin/run.sh"]
