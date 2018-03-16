@@ -18,9 +18,6 @@ WORKDIR /aem/crx-quickstart/bin
 COPY ./scripts/run.sh /aem/crx-quickstart/bin/run.sh
 
 WORKDIR /aem/crx-quickstart
-COPY jstatd.all.policy /aem/crx-quickstart/jstatd.all.policy
-COPY jstatd_run /aem/crx-quickstart/jstatd_run
-RUN chmod +x /aem/crx-quickstart/jstatd_run
 
 # https://vsupalov.com/docker-build-time-env-values/
 ARG AEM_RUNMODE=author

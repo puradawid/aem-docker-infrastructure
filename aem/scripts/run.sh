@@ -52,7 +52,16 @@ CQ_NOFORK='true'
 CQ_JAAS_CONFIG='etc/jaas.config'
 
 # default JVM options
-CQ_JVM_OPTS='-Xdebug -Xrunjdwp:transport=dt_socket,server=y,address=10000,suspend=n -server -Xmx2024m -XX:MaxPermSize=512M'
+CQ_JVM_OPTS="-Xdebug 
+  -Dcom.sun.management.jmxremote
+  -Djava.rmi.server.hostname=${HOST_IP}
+  -Dcom.sun.management.jmxremote.port=${JMXPORT}
+  -Dcom.sun.management.jmxremote.rmi.port=${JMXPORT}
+  -Dcom.sun.management.jmxremote.authenticate=false
+  -Dcom.sun.management.jmxremote.ssl=false
+  -Dcom.sun.management.jmxremote.local.only=false
+  -Xrunjdwp:transport=dt_socket,server=y,address=10000,suspend=n
+  -server -Xmx2024m -XX:MaxPermSize=512M"
 
 # file size limit (ulimit)
 CQ_FILE_SIZE_LIMIT=8192
