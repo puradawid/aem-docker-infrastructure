@@ -27,6 +27,9 @@ CQ_VERBOSE='false'
 # do not fork the JVM
 CQ_NOFORK='true'
 
+# do not show browser
+CQ_NOBROWSER='true'
+
 # force forking the VM using recommended default memory settings
 #CQ_FORK='true'
 
@@ -51,8 +54,14 @@ CQ_NOFORK='true'
 # config for jaas
 CQ_JAAS_CONFIG='etc/jaas.config'
 
+# config JMX value if not set
+if [ -z $JMXPORT ]; then
+  JMXPORT=45029
+  HOST_IP="127.0.0.1"
+fi
+
 # default JVM options
-CQ_JVM_OPTS="-Xdebug 
+CQ_JVM_OPTS="-Xdebug
   -Dcom.sun.management.jmxremote
   -Djava.rmi.server.hostname=${HOST_IP}
   -Dcom.sun.management.jmxremote.port=${JMXPORT}
